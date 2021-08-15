@@ -1,2 +1,4 @@
 # -FEM--tipSplitter
-Splits tip by number of persons &amp;&amp; percentage
+Takes Bill Total, Tip percentage, number of persons
+
+Divides bill evenly, tip included
