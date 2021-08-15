@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Splitter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <h1>
+      SPLI
+      <div>TTER</div>
+    </h1>
+    <div class="container">
+      <div class="bill-container">
+        <div class="bill-amount">
+          <p>Bill</p>
+          <span class="fa fa-dollar"></span>
+          <input type="number" id="input-bill-total" />
+        </div>
+        <div class="tip-amount">
+          <p>Select Tip %</p>
+          <div class="button-container">
+            <button value="5" id="5-percent">5%</button>
+            <button value="10" id="10-percent">10%</button>
+            <button value="15" id="15-percent">15%</button>
+            <button value="25" id="25-percent">25%</button>
+            <button value="50" id="50-percent">50%</button>
+            <input id="custom-percent" type="number" placeholder="Custom" />
+          </div>
+        </div>
+        <div class="people-amount">
+          <p>Number of People <span>Can't be zero</span></p>
+          <span class="fa fa-user"></span>
+          <input type="number" id="number-of-people" />
+        </div>
+      </div>
+      <div class="tipping-container">
+        <div class="tip-result">
+          <div>
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <p id="result-tipPerPerson">$0.00</p>
+        </div>
+        <div class="total-result">
+          <div>
+            <p>Total</p>
+            <p>/ person</p>
+          </div>
+          <p id="result-totalPerPerson">$0.00</p>
+        </div>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

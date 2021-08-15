@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --clr-cyan1: hsl(172, 67%, 45%);
+  --clr-cyan2: hsl(183, 100%, 15%);
+  --clr-cyan3: hsl(186, 14%, 43%);
+  --clr-cyan4: hsl(184, 14%, 56%);
+  --clr-cyan5: hsl(185, 41%, 84%);
+  --clr-cyan6: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+  --ff: "Space Mono", monospace;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: var(--clr-cyan5);
+  color: var(--clr-cyan3);
+  font-family: var(--ff);
+  font-size: 14px;
+}
+/*=====================
+General Layout
+======================*/
+h1 {
+  text-align: center;
+  letter-spacing: 10px;
+  font-size: 26px;
+  margin: 20px 0;
+}
+.container {
+  background-color: var(--clr-white);
+  padding: 25px 30px;
+  border-radius: 20px;
+  font-weight: 800;
+  display: flex;
+  flex-flow: column nowrap;
+  min-width: 375px;
+  max-width: 500px;
+  margin: auto;
+}
+/*=====================
+Billing Information (Input by User)
+======================*/
+.bill-amount {
+  margin-bottom: 20px;
+  position: relative;
+}
+/* $ ICON */
+.bill-amount > span {
+  position: absolute;
+  top: 40px;
+  font-size: 20px;
+  left: 20px;
+  color: var(--clr-cyan5);
+}
+/* Bill Field */
+.bill-container input {
+  background-color: var(--clr-cyan6);
+  margin: 5px 0;
+  padding: 7px 15px;
+  width: 100%;
+  border: 3px solid var(--clr-cyan6);
+  border-radius: 3px;
+  text-align: right;
+  color: var(--clr-cyan2);
+  font-family: var(--ff);
+  font-size: 20px;
+  font-weight: 700;
+  outline: none;
+}
+.bill-container input:focus {
+  border: 3px solid var(--clr-cyan1);
+  /* background-color: red; */
+}
+.bill-container input::-webkit-inner-spin-button,
+.bill-container input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Tipping choices container */
+.tip-amount {
+  height: 200px;
+  margin-bottom: 30px;
+}
+.button-container {
+  margin: auto;
+  max-width: 325px;
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 180px;
+}
+/* Tip Percentages buttons */
+.button-container > button {
+  width: 150px;
+  height: 45px;
+  font-size: 20px;
+  background-color: var(--clr-cyan2);
+  color: white;
+  font-weight: 700;
+  font-family: var(--ff);
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.button-container > button:hover {
+  background-color: var(--clr-cyan5);
+  color: var(--clr-cyan2);
+}
+/* Customer Tip amount field */
+.button-container > input {
+  background-color: var(--clr-cyan6);
+  width: 150px;
+  height: 45px;
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+}
+.button-container > input::placeholder {
+  color: var(--clr-cyan3);
+  font-family: var(--ff);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+}
+/* USER ICON */
+.people-amount {
+  position: relative;
+}
+.people-amount > span {
+  position: absolute;
+  font-size: 20px;
+  color: var(--clr-cyan5);
+  left: 15px;
+  top: 40px;
+}
+/* Number of People (Hidden "CANT BE ZERO" text) */
+.people-amount > p > span {
+  float: right;
+}
+
+/*=====================
+Tipping Information (Output to User)
+======================*/
+.tipping-container {
+  background-color: var(--clr-cyan2);
+  border-radius: 15px;
+  margin: 20px 0;
+  padding: 35px 20px;
+}
+.tip-result {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.total-result {
+  display: flex;
+  justify-content: space-between;
+}
+/* TEXT (Tip Amount / Total */
+.tip-result > div > p:first-child,
+.total-result > div > p:first-child {
+  color: var(--clr-white);
+}
+/* TEXT (/ person) */
+.tip-result > div > p:last-child,
+.total-result > div > p:last-child {
+  color: var(--clr-cyan4);
+  font-size: 12px;
+}
+/* Numbers ($0.00) */
+.tip-result > p,
+.total-result > p {
+  color: var(--clr-cyan1);
+  font-size: 26px;
+}
+/* RESET Button */
+.tipping-container > button {
+  background-color: var(--clr-cyan1);
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--clr-cyan2);
+  font-weight: 900;
+  font-family: var(--ff);
+  padding: 5px 0;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.tipping-container > button:hover {
+  background-color: var(--clr-cyan5);
+}
+.selected {
+  background-color: var(--clr-cyan1) !important;
+  color: var(--clr-cyan2) !important;
+}
+/*=============================
+Responsive
+==============================*/
+@media (min-width: 992px) {
+  h1 {
+    margin: 10% auto 100px auto;
+  }
+  .container {
+    flex-flow: row nowrap;
+    max-width: 800px;
+    justify-content: space-between;
+  }
+  .bill-container {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+  }
+  .bill-amount,
+  .tip-amount,
+  .people-amount {
+    margin: 0;
+    height: fit-content;
+  }
+  /* Tipping percent buttons */
+  .button-container {
+    margin: 10px 0 0 0;
+    max-width: 100%;
+    height: 120px;
+  }
+  .button-container > button {
+    width: 115px;
+  }
+  .button-container > input {
+    width: 115px;
+  }
+
+  /* Tipping Output to User */
+  .tipping-container {
+    width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 35px;
+    margin: 0;
+  }
+  .tip-result > p,
+  .total-result > p {
+    font-size: 34px;
+  }
+  .tipping-container > button {
+    margin-top: 120px;
+  }
+}
